@@ -295,18 +295,22 @@ function readfile(arr, data) {
   // Have to take this approach because ExcelJS doesn't have an autofit property.
   worksheetActive.columns.forEach((column) => {
     if (column.header === 'Item Name') {
-      column.width = column.header.length < 12 ? 150 : column.header.length;
+      column.width = column.header.length < 12 ? 160 : column.header.length;
     } else if (column.header === 'Sku') {
       column.width = column.header.length < 12 ? 33 : column.header.length;
+    } else if (column.header === 'Open Date') {
+      column.width = column.header.length < 12 ? 21 : column.header.length;
     } else {
       column.width = column.header.length < 12 ? 12 : column.header.length;
     }
   });
   worksheetInActive.columns.forEach((column) => {
     if (column.header === 'Item Name') {
-      column.width = column.header.length < 12 ? 140 : column.header.length;
+      column.width = column.header.length < 12 ? 150 : column.header.length;
     } else if (column.header === 'Sku') {
       column.width = column.header.length < 12 ? 30 : column.header.length;
+    } else if (column.header === 'Open Date') {
+      column.width = column.header.length < 12 ? 21 : column.header.length;
     } else {
       column.width = column.header.length < 12 ? 12 : column.header.length;
     }
@@ -390,12 +394,11 @@ function readfile(arr, data) {
 
   // Create a freeze pane, which means we'll always see the header as we scroll around.
   worksheetActive.views = [
-    { state: 'frozen', xSplit: 0, ySplit: 1, activeCell: 'B2' },
+    { state: 'frozen', xSplit: 1, ySplit: 1, activeCell: 'B2' },
   ];
   worksheetInActive.views = [
-    { state: 'frozen', xSplit: 0, ySplit: 1, activeCell: 'B2' },
+    { state: 'frozen', xSplit: 1, ySplit: 1, activeCell: 'B2' },
   ];
-
   // Keep in mind that reading and writing is promise based.
   workbook.xlsx.writeFile('Data.xlsx');
 }
