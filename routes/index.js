@@ -4,27 +4,57 @@ const fs = require('fs');
 const path = require('path');
 const Excel = require('exceljs');
 const xl = require('excel4node');
-const wb = new xl.Workbook();
 let arr = []; /*read json report file and parse it*/
 let data = []; /*read json products file and parse it*/
+let checkForValidFile;
+let mainPath = path.join(__dirname, '..', 'data');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  let pathForFile = path.join(__dirname);
-  data = JSON.parse(
-    fs.readFileSync(`${pathForFile}/products.json`, 'utf8', 'r')
-  );
-  arr = JSON.parse(fs.readFileSync(`${pathForFile}/report.json`, 'utf8', 'r'));
 
-  console.log('arr, data =========', arr.length, data.length);
-  // console.log(data);
-  readfile(arr, data);
+router.get('/', function (req, res, next) {
+  fs.readdir(mainPath, function (err, folders) {
+    //handling error
+    if (err) {
+      return console.log('Unable to scan directory: ' + err);
+    }
+
+    const mainFolders = folders.filter((res) =>
+      fs.lstatSync(path.resolve(mainPath, res)).isDirectory()
+    );
+
+    mainFolders.forEach(function (folder) {
+      fs.readdir(path.join(mainPath, folder), function (err, files) {
+        //listing all files using forEach
+
+        files.forEach(function (file) {
+          const extension = file.split('.').pop();
+          checkForValidFile = extension === 'json' ? true : false;
+          if (checkForValidFile) {
+            if (file === 'products.json') {
+              data = JSON.parse(
+                fs.readFileSync(path.join(mainPath, folder, file), 'utf8', 'r')
+              );
+            }
+            if (file === 'reports.json') {
+              arr = JSON.parse(
+                fs.readFileSync(path.join(mainPath, folder, file), 'utf8', 'r')
+              );
+            }
+          }
+        });
+        if (checkForValidFile) {
+          readfile(folder, arr, data);
+        }
+      });
+    });
+  });
+
   res.status(200).send('Excel File Created');
 });
 
 module.exports = router;
 
-function readfile(arr, data) {
+function readfile(folder, arr, data) {
   let products = [];
   let productAsins = [];
 
@@ -399,6 +429,7 @@ function readfile(arr, data) {
   worksheetInActive.views = [
     { state: 'frozen', xSplit: 1, ySplit: 1, activeCell: 'B2' },
   ];
+
   // Keep in mind that reading and writing is promise based.
-  workbook.xlsx.writeFile('Data.xlsx');
+  workbook.xlsx.writeFile(`${mainPath}/${folder}/${folder}.xlsx`);
 }
