@@ -3,7 +3,6 @@ var router = express.Router();
 const fs = require('fs');
 const path = require('path');
 const Excel = require('exceljs');
-const xl = require('excel4node');
 let arr = []; /*read json report file and parse it*/
 let data = []; /*read json products file and parse it*/
 let checkForValidFile;
