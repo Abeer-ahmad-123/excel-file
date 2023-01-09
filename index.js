@@ -1,16 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express'); //Import the express dependency
+const app = express(); //Instantiate an express app, the main work horse of this server
+const port = 5000; //Save the port number where your server will be listening
 const fs = require('fs');
 const path = require('path');
 const Excel = require('exceljs');
 let arr = []; /*read json report file and parse it*/
 let data = []; /*read json products file and parse it*/
 let checkForValidFile;
-let mainPath = path.join(__dirname, '..', 'data');
+let mainPath = path.join(__dirname, 'data');
 
-/* GET home page. */
-
-router.get('/', function (req, res, next) {
+app.get('/', (req, res) => {
   fs.readdir(mainPath, function (err, folders) {
     //handling error
     if (err) {
@@ -50,8 +49,6 @@ router.get('/', function (req, res, next) {
 
   res.status(200).send('Excel File Created');
 });
-
-module.exports = router;
 
 function readfile(folder, arr, data) {
   let products = [];
@@ -432,3 +429,8 @@ function readfile(folder, arr, data) {
   // Keep in mind that reading and writing is promise based.
   workbook.xlsx.writeFile(`${mainPath}/${folder}/${folder}.xlsx`);
 }
+
+app.listen(port, () => {
+  //server starts listening for any attempts from a client to connect at port: {port}
+  console.log(`Now listening on port ${port}`);
+});
