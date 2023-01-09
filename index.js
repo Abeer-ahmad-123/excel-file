@@ -252,10 +252,8 @@ function readfile(folder, arr, data) {
     let keys = [
       'seller-sku',
       'item-name',
-      'open-date',
       'asin1',
       'product-id',
-      'status',
       'relation',
       'avg_landed_costs',
     ];
@@ -299,20 +297,16 @@ function readfile(folder, arr, data) {
   worksheetActive.columns = [
     { header: 'Sku', key: 'seller-sku' },
     { header: 'Item Name', key: 'item-name' },
-    { header: 'Open Date', key: 'open-date' },
     { header: 'Asin', key: 'asin1' },
     { header: 'Product Id', key: 'product-id' },
-    { header: 'Status', key: 'status' },
     { header: 'Relation', key: 'relation' },
     { header: 'Avg Landed Costs', key: 'avg_landed_costs' },
   ];
   worksheetInActive.columns = [
     { header: 'Sku', key: 'seller-sku' },
     { header: 'Item Name', key: 'item-name' },
-    { header: 'Open Date', key: 'open-date' },
     { header: 'Asin', key: 'asin1' },
     { header: 'Product Id', key: 'product-id' },
-    { header: 'Status', key: 'status' },
     { header: 'Relation', key: 'relation' },
     { header: 'Avg Landed Costs', key: 'avg_landed_costs' },
   ];
