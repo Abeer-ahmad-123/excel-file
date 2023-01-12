@@ -272,9 +272,9 @@ function readfile(folder, arr, data) {
 
     let keys = [
       'productSku',
-      'item-name',
+      'itemName',
       'asin1',
-      'product-id',
+      'productId',
       'relation',
       'costPerItem',
     ];
@@ -321,26 +321,26 @@ function readfile(folder, arr, data) {
   let worksheetInComplete = workbook.addWorksheet('InComplete');
 
   worksheetActive.columns = [
-    { header: 'Sku', key: 'seller-sku' },
-    { header: 'Item Name', key: 'item-name' },
+    { header: 'Sku', key: 'sellerSku' },
+    { header: 'Item Name', key: 'itemName' },
     { header: 'Asin', key: 'asin1' },
-    { header: 'Product Id', key: 'product-id' },
+    { header: 'Product Id', key: 'productId' },
     { header: 'Relation', key: 'relation' },
     { header: 'Avg Landed Costs', key: 'costPerItem' },
   ];
   worksheetInActive.columns = [
-    { header: 'Sku', key: 'seller-sku' },
-    { header: 'Item Name', key: 'item-name' },
+    { header: 'Sku', key: 'sellerSku' },
+    { header: 'Item Name', key: 'itemName' },
     { header: 'Asin', key: 'asin1' },
-    { header: 'Product Id', key: 'product-id' },
+    { header: 'Product Id', key: 'productId' },
     { header: 'Relation', key: 'relation' },
     { header: 'Avg Landed Costs', key: 'costPerItem' },
   ];
   worksheetInComplete.columns = [
-    { header: 'Sku', key: 'seller-sku' },
-    { header: 'Item Name', key: 'item-name' },
+    { header: 'Sku', key: 'sellerSku' },
+    { header: 'Item Name', key: 'itemName' },
     { header: 'Asin', key: 'asin1' },
-    { header: 'Product Id', key: 'product-id' },
+    { header: 'Product Id', key: 'productId' },
     { header: 'Relation', key: 'relation' },
     { header: 'Avg Landed Costs', key: 'costPerItem' },
   ];
