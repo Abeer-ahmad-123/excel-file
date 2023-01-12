@@ -1,5 +1,257 @@
 [
   {
+    "asin": "B07C27CG18",
+    "identifiers": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "identifiers": [
+          { "identifier": "0661708972459", "identifierType": "EAN" },
+          { "identifier": "661708972459", "identifierType": "UPC" }
+        ]
+      }
+    ],
+    "images": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "images": [
+          {
+            "variant": "MAIN",
+            "link": "https://m.media-amazon.com/images/I/71IUQDpNhKL.jpg",
+            "height": 1200,
+            "width": 1200
+          },
+          {
+            "variant": "MAIN",
+            "link": "https://m.media-amazon.com/images/I/51LCUrY13DL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "MAIN",
+            "link": "https://m.media-amazon.com/images/I/51LCUrY13DL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT01",
+            "link": "https://m.media-amazon.com/images/I/81MjOsGuYHL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT01",
+            "link": "https://m.media-amazon.com/images/I/51-LPJY1WNL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT01",
+            "link": "https://m.media-amazon.com/images/I/51-LPJY1WNL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT02",
+            "link": "https://m.media-amazon.com/images/I/81ZdLrUSFML.jpg",
+            "height": 1600,
+            "width": 1600
+          },
+          {
+            "variant": "PT02",
+            "link": "https://m.media-amazon.com/images/I/61e84AWQgxL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT02",
+            "link": "https://m.media-amazon.com/images/I/61e84AWQgxL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT03",
+            "link": "https://m.media-amazon.com/images/I/81OSU2fB-IL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT03",
+            "link": "https://m.media-amazon.com/images/I/51f3xHkRlML.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT03",
+            "link": "https://m.media-amazon.com/images/I/51f3xHkRlML._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT04",
+            "link": "https://m.media-amazon.com/images/I/91BHZHRLuaL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT04",
+            "link": "https://m.media-amazon.com/images/I/61z96xVqdjL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT04",
+            "link": "https://m.media-amazon.com/images/I/61z96xVqdjL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT05",
+            "link": "https://m.media-amazon.com/images/I/91xp+BRUU3L.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT05",
+            "link": "https://m.media-amazon.com/images/I/51x8ZlCTuSL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT05",
+            "link": "https://m.media-amazon.com/images/I/51x8ZlCTuSL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT06",
+            "link": "https://m.media-amazon.com/images/I/81Cst6YGhZL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT06",
+            "link": "https://m.media-amazon.com/images/I/51L+9zdfwnL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT06",
+            "link": "https://m.media-amazon.com/images/I/51L+9zdfwnL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT07",
+            "link": "https://m.media-amazon.com/images/I/91PXmnHTOVL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT07",
+            "link": "https://m.media-amazon.com/images/I/61MSHlKPRQL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT07",
+            "link": "https://m.media-amazon.com/images/I/61MSHlKPRQL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT08",
+            "link": "https://m.media-amazon.com/images/I/81czhNHVxlL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT08",
+            "link": "https://m.media-amazon.com/images/I/61q+tLxuw5L.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT08",
+            "link": "https://m.media-amazon.com/images/I/61q+tLxuw5L._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          }
+        ]
+      }
+    ],
+    "productTypes": [
+      { "marketplaceId": "ATVPDKIKX0DER", "productType": "CADDY" }
+    ],
+    "ranks": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "ranks": [
+          {
+            "title": "Baby",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products",
+            "value": 71830,
+            "rank": 71830
+          },
+          {
+            "title": "Nursery Décor",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
+            "value": 8448,
+            "rank": 8448
+          },
+          {
+            "title": "Diaper Stackers & Caddies",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
+            "value": 295,
+            "rank": 295
+          }
+        ]
+      }
+    ],
+    "salesRanks": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "ranks": [
+          {
+            "title": "Baby",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products",
+            "value": 71830,
+            "rank": 71830
+          },
+          {
+            "title": "Nursery Décor",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
+            "value": 8448,
+            "rank": 8448
+          },
+          {
+            "title": "Diaper Stackers & Caddies",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
+            "value": 295,
+            "rank": 295
+          }
+        ]
+      }
+    ],
+    "summaries": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "brandName": "Cartik",
+        "browseNode": "166769011",
+        "colorName": "gray",
+        "itemName": "Baby Diaper Caddy Organizer – Nursery Basket with Convenient Leather Handles, Storage Bin – Durable, Portable Changing Table Diaper Storage + Bonus Insulated Wipe Carrier by Cartik™",
+        "manufacturer": "Cartik",
+        "modelNumber": ".",
+        "sizeName": "1 Count (Pack of 1)"
+      }
+    ],
+    "variations": [],
+    "productAsin": "B07C27CG18",
+    "status": "Active",
+    "productSku": "1B-YHD0-06JY",
+    "launchDate": "2018-04-09T06:49:41.000Z",
+    "costPerItem": "4.6"
+  },
+  {
     "asin": "B09PGLKMK9",
     "identifiers": [{ "marketplaceId": "ATVPDKIKX0DER", "identifiers": [] }],
     "images": [
@@ -145,20 +397,20 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 26300,
-            "rank": 26300
+            "value": 36534,
+            "rank": 36534
           },
           {
             "title": "Nursery Décor",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 2811,
-            "rank": 2811
+            "value": 3596,
+            "rank": 3596
           },
           {
             "title": "Diaper Stackers & Caddies",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 90,
-            "rank": 90
+            "value": 162,
+            "rank": 162
           }
         ]
       }
@@ -170,20 +422,20 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 26300,
-            "rank": 26300
+            "value": 36534,
+            "rank": 36534
           },
           {
             "title": "Nursery Décor",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 2811,
-            "rank": 2811
+            "value": 3596,
+            "rank": 3596
           },
           {
             "title": "Diaper Stackers & Caddies",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 90,
-            "rank": 90
+            "value": 162,
+            "rank": 162
           }
         ]
       }
@@ -204,7 +456,12 @@
         "asins": ["B09YFP28G8"],
         "variationType": "CHILD"
       }
-    ]
+    ],
+    "productAsin": "B09PGLKMK9",
+    "status": "Active",
+    "productSku": "EL-NTZN-UZAR",
+    "launchDate": "2021-12-30T02:38:48.000Z",
+    "costPerItem": "8"
   },
   {
     "asin": "B07GNRHN2Q",
@@ -369,7 +626,7 @@
       }
     ],
     "productTypes": [
-      { "marketplaceId": "ATVPDKIKX0DER", "productType": "AUTO_ACCESSORY" }
+      { "marketplaceId": "ATVPDKIKX0DER", "productType": "CADDY" }
     ],
     "ranks": [
       {
@@ -378,14 +635,14 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 22289,
-            "rank": 22289
+            "value": 22924,
+            "rank": 22924
           },
           {
             "title": "Car Seat Attachable Storage & Organizers",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/8457339011",
-            "value": 64,
-            "rank": 64
+            "value": 63,
+            "rank": 63
           }
         ]
       }
@@ -397,14 +654,14 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 22289,
-            "rank": 22289
+            "value": 22924,
+            "rank": 22924
           },
           {
             "title": "Car Seat Attachable Storage & Organizers",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/8457339011",
-            "value": 64,
-            "rank": 64
+            "value": 63,
+            "rank": 63
           }
         ]
       }
@@ -427,7 +684,12 @@
         "asins": ["B07FZQRZZF"],
         "variationType": "CHILD"
       }
-    ]
+    ],
+    "productAsin": "B07GNRHN2Q",
+    "status": "Active",
+    "productSku": "HZ-QVQR-JS29",
+    "launchDate": "2018-08-20T05:02:14.000Z",
+    "costPerItem": "7.2"
   },
   {
     "asin": "B076ZJX4SX",
@@ -619,14 +881,14 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 22289,
-            "rank": 22289
+            "value": 22924,
+            "rank": 22924
           },
           {
             "title": "Car Seat Attachable Storage & Organizers",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/8457339011",
-            "value": 64,
-            "rank": 64
+            "value": 63,
+            "rank": 63
           }
         ]
       }
@@ -638,14 +900,14 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 22289,
-            "rank": 22289
+            "value": 22924,
+            "rank": 22924
           },
           {
             "title": "Car Seat Attachable Storage & Organizers",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/8457339011",
-            "value": 64,
-            "rank": 64
+            "value": 63,
+            "rank": 63
           }
         ]
       }
@@ -667,254 +929,12 @@
         "asins": ["B07FZQRZZF"],
         "variationType": "CHILD"
       }
-    ]
-  },
-  {
-    "asin": "B07C27CG18",
-    "identifiers": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "identifiers": [
-          { "identifier": "0661708972459", "identifierType": "EAN" },
-          { "identifier": "661708972459", "identifierType": "UPC" }
-        ]
-      }
     ],
-    "images": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "images": [
-          {
-            "variant": "MAIN",
-            "link": "https://m.media-amazon.com/images/I/71IUQDpNhKL.jpg",
-            "height": 1200,
-            "width": 1200
-          },
-          {
-            "variant": "MAIN",
-            "link": "https://m.media-amazon.com/images/I/51LCUrY13DL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "MAIN",
-            "link": "https://m.media-amazon.com/images/I/51LCUrY13DL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT01",
-            "link": "https://m.media-amazon.com/images/I/81MjOsGuYHL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT01",
-            "link": "https://m.media-amazon.com/images/I/51-LPJY1WNL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT01",
-            "link": "https://m.media-amazon.com/images/I/51-LPJY1WNL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT02",
-            "link": "https://m.media-amazon.com/images/I/81ZdLrUSFML.jpg",
-            "height": 1600,
-            "width": 1600
-          },
-          {
-            "variant": "PT02",
-            "link": "https://m.media-amazon.com/images/I/61e84AWQgxL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT02",
-            "link": "https://m.media-amazon.com/images/I/61e84AWQgxL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT03",
-            "link": "https://m.media-amazon.com/images/I/81OSU2fB-IL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT03",
-            "link": "https://m.media-amazon.com/images/I/51f3xHkRlML.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT03",
-            "link": "https://m.media-amazon.com/images/I/51f3xHkRlML._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT04",
-            "link": "https://m.media-amazon.com/images/I/91BHZHRLuaL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT04",
-            "link": "https://m.media-amazon.com/images/I/61z96xVqdjL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT04",
-            "link": "https://m.media-amazon.com/images/I/61z96xVqdjL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT05",
-            "link": "https://m.media-amazon.com/images/I/91xp+BRUU3L.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT05",
-            "link": "https://m.media-amazon.com/images/I/51x8ZlCTuSL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT05",
-            "link": "https://m.media-amazon.com/images/I/51x8ZlCTuSL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT06",
-            "link": "https://m.media-amazon.com/images/I/81Cst6YGhZL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT06",
-            "link": "https://m.media-amazon.com/images/I/51L+9zdfwnL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT06",
-            "link": "https://m.media-amazon.com/images/I/51L+9zdfwnL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT07",
-            "link": "https://m.media-amazon.com/images/I/91PXmnHTOVL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT07",
-            "link": "https://m.media-amazon.com/images/I/61MSHlKPRQL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT07",
-            "link": "https://m.media-amazon.com/images/I/61MSHlKPRQL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT08",
-            "link": "https://m.media-amazon.com/images/I/81czhNHVxlL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT08",
-            "link": "https://m.media-amazon.com/images/I/61q+tLxuw5L.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT08",
-            "link": "https://m.media-amazon.com/images/I/61q+tLxuw5L._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          }
-        ]
-      }
-    ],
-    "productTypes": [
-      { "marketplaceId": "ATVPDKIKX0DER", "productType": "CADDY" }
-    ],
-    "ranks": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "ranks": [
-          {
-            "title": "Baby",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 84383,
-            "rank": 84383
-          },
-          {
-            "title": "Nursery Décor",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 11041,
-            "rank": 11041
-          },
-          {
-            "title": "Diaper Stackers & Caddies",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 301,
-            "rank": 301
-          }
-        ]
-      }
-    ],
-    "salesRanks": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "ranks": [
-          {
-            "title": "Baby",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 84383,
-            "rank": 84383
-          },
-          {
-            "title": "Nursery Décor",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 11041,
-            "rank": 11041
-          },
-          {
-            "title": "Diaper Stackers & Caddies",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 301,
-            "rank": 301
-          }
-        ]
-      }
-    ],
-    "summaries": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "brandName": "Cartik",
-        "browseNode": "166769011",
-        "colorName": "gray",
-        "itemName": "Baby Diaper Caddy Organizer – Nursery Basket with Convenient Leather Handles, Storage Bin – Durable, Portable Changing Table Diaper Storage + Bonus Insulated Wipe Carrier by Cartik™",
-        "manufacturer": "Cartik",
-        "modelNumber": ".",
-        "sizeName": "1 Count (Pack of 1)"
-      }
-    ],
-    "variations": []
+    "productAsin": "B076ZJX4SX",
+    "status": "Active",
+    "productSku": "LD-MT1T-ZNZU",
+    "launchDate": "2017-10-30T01:11:51.000Z",
+    "costPerItem": "3.6"
   },
   {
     "asin": "B07C27CG18",
@@ -1106,20 +1126,20 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 84383,
-            "rank": 84383
+            "value": 71830,
+            "rank": 71830
           },
           {
             "title": "Nursery Décor",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 11041,
-            "rank": 11041
+            "value": 8448,
+            "rank": 8448
           },
           {
             "title": "Diaper Stackers & Caddies",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 301,
-            "rank": 301
+            "value": 295,
+            "rank": 295
           }
         ]
       }
@@ -1131,20 +1151,20 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 84383,
-            "rank": 84383
+            "value": 71830,
+            "rank": 71830
           },
           {
             "title": "Nursery Décor",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 11041,
-            "rank": 11041
+            "value": 8448,
+            "rank": 8448
           },
           {
             "title": "Diaper Stackers & Caddies",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 301,
-            "rank": 301
+            "value": 295,
+            "rank": 295
           }
         ]
       }
@@ -1161,7 +1181,233 @@
         "sizeName": "1 Count (Pack of 1)"
       }
     ],
-    "variations": []
+    "variations": [],
+    "productAsin": "B07C27CG18",
+    "status": "Inactive",
+    "productSku": "40-M3P3-Q7NE",
+    "launchDate": "2022-11-26T19:39:01.000Z"
+  },
+  {
+    "asin": "B07F1X69HS",
+    "identifiers": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "identifiers": [
+          { "identifier": "0661708972466", "identifierType": "EAN" },
+          { "identifier": "661708972466", "identifierType": "UPC" }
+        ]
+      }
+    ],
+    "images": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "images": [
+          {
+            "variant": "MAIN",
+            "link": "https://m.media-amazon.com/images/I/815i3OtOGBL.jpg",
+            "height": 2500,
+            "width": 2500
+          },
+          {
+            "variant": "MAIN",
+            "link": "https://m.media-amazon.com/images/I/41Bb1mrG-ZL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "MAIN",
+            "link": "https://m.media-amazon.com/images/I/41Bb1mrG-ZL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT01",
+            "link": "https://m.media-amazon.com/images/I/71+VgC2r6GL.jpg",
+            "height": 1500,
+            "width": 1500
+          },
+          {
+            "variant": "PT01",
+            "link": "https://m.media-amazon.com/images/I/51WxLSTyUNL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT01",
+            "link": "https://m.media-amazon.com/images/I/51WxLSTyUNL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT02",
+            "link": "https://m.media-amazon.com/images/I/819H1Cz2aeL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT02",
+            "link": "https://m.media-amazon.com/images/I/51mz3ZR97BL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT02",
+            "link": "https://m.media-amazon.com/images/I/51mz3ZR97BL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT03",
+            "link": "https://m.media-amazon.com/images/I/81VSHGUB5yL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT03",
+            "link": "https://m.media-amazon.com/images/I/516rSp82ULL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT03",
+            "link": "https://m.media-amazon.com/images/I/516rSp82ULL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT04",
+            "link": "https://m.media-amazon.com/images/I/81sTG3vdTSL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT04",
+            "link": "https://m.media-amazon.com/images/I/51eUnEg+UOL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT04",
+            "link": "https://m.media-amazon.com/images/I/51eUnEg+UOL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT05",
+            "link": "https://m.media-amazon.com/images/I/81gNtGeiHlL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT05",
+            "link": "https://m.media-amazon.com/images/I/51oCs2KfAkL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT05",
+            "link": "https://m.media-amazon.com/images/I/51oCs2KfAkL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          },
+          {
+            "variant": "PT06",
+            "link": "https://m.media-amazon.com/images/I/813gDxA4feL.jpg",
+            "height": 2000,
+            "width": 2000
+          },
+          {
+            "variant": "PT06",
+            "link": "https://m.media-amazon.com/images/I/51g6WxiGNRL.jpg",
+            "height": 500,
+            "width": 500
+          },
+          {
+            "variant": "PT06",
+            "link": "https://m.media-amazon.com/images/I/51g6WxiGNRL._SL75_.jpg",
+            "height": 75,
+            "width": 75
+          }
+        ]
+      }
+    ],
+    "productTypes": [
+      { "marketplaceId": "ATVPDKIKX0DER", "productType": "CADDY" }
+    ],
+    "ranks": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "ranks": [
+          {
+            "title": "Baby",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products",
+            "value": 36534,
+            "rank": 36534
+          },
+          {
+            "title": "Nursery Décor",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
+            "value": 3596,
+            "rank": 3596
+          },
+          {
+            "title": "Diaper Stackers & Caddies",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
+            "value": 162,
+            "rank": 162
+          }
+        ]
+      }
+    ],
+    "salesRanks": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "ranks": [
+          {
+            "title": "Baby",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products",
+            "value": 36534,
+            "rank": 36534
+          },
+          {
+            "title": "Nursery Décor",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
+            "value": 3596,
+            "rank": 3596
+          },
+          {
+            "title": "Diaper Stackers & Caddies",
+            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
+            "value": 162,
+            "rank": 162
+          }
+        ]
+      }
+    ],
+    "summaries": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "brandName": "Cartik",
+        "browseNode": "166769011",
+        "itemName": "Diaper Caddy Organizer (old Diaper Caddy Organizer)",
+        "manufacturer": "Cartik",
+        "modelNumber": "2246",
+        "sizeName": "2 Count (Pack of 1)",
+        "styleName": "old Diaper Caddy Organizer"
+      }
+    ],
+    "variations": [
+      {
+        "marketplaceId": "ATVPDKIKX0DER",
+        "asins": ["B09YFP28G8"],
+        "variationType": "CHILD"
+      }
+    ],
+    "productAsin": "B07F1X69HS",
+    "status": "Inactive",
+    "productSku": "5L-Y8DM-ULLO",
+    "launchDate": "2018-04-09T06:38:09.000Z",
+    "costPerItem": "3"
   },
   {
     "asin": "B07F1X69HS",
@@ -1317,20 +1563,20 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 26300,
-            "rank": 26300
+            "value": 36534,
+            "rank": 36534
           },
           {
             "title": "Nursery Décor",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 2811,
-            "rank": 2811
+            "value": 3596,
+            "rank": 3596
           },
           {
             "title": "Diaper Stackers & Caddies",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 90,
-            "rank": 90
+            "value": 162,
+            "rank": 162
           }
         ]
       }
@@ -1342,20 +1588,20 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 26300,
-            "rank": 26300
+            "value": 36534,
+            "rank": 36534
           },
           {
             "title": "Nursery Décor",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 2811,
-            "rank": 2811
+            "value": 3596,
+            "rank": 3596
           },
           {
             "title": "Diaper Stackers & Caddies",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 90,
-            "rank": 90
+            "value": 162,
+            "rank": 162
           }
         ]
       }
@@ -1378,224 +1624,12 @@
         "asins": ["B09YFP28G8"],
         "variationType": "CHILD"
       }
-    ]
-  },
-  {
-    "asin": "B07F1X69HS",
-    "identifiers": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "identifiers": [
-          { "identifier": "0661708972466", "identifierType": "EAN" },
-          { "identifier": "661708972466", "identifierType": "UPC" }
-        ]
-      }
     ],
-    "images": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "images": [
-          {
-            "variant": "MAIN",
-            "link": "https://m.media-amazon.com/images/I/41Bb1mrG-ZL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "MAIN",
-            "link": "https://m.media-amazon.com/images/I/41Bb1mrG-ZL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "MAIN",
-            "link": "https://m.media-amazon.com/images/I/815i3OtOGBL.jpg",
-            "height": 2500,
-            "width": 2500
-          },
-          {
-            "variant": "PT01",
-            "link": "https://m.media-amazon.com/images/I/51WxLSTyUNL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT01",
-            "link": "https://m.media-amazon.com/images/I/51WxLSTyUNL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT01",
-            "link": "https://m.media-amazon.com/images/I/71+VgC2r6GL.jpg",
-            "height": 1500,
-            "width": 1500
-          },
-          {
-            "variant": "PT02",
-            "link": "https://m.media-amazon.com/images/I/51mz3ZR97BL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT02",
-            "link": "https://m.media-amazon.com/images/I/51mz3ZR97BL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT02",
-            "link": "https://m.media-amazon.com/images/I/819H1Cz2aeL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT03",
-            "link": "https://m.media-amazon.com/images/I/516rSp82ULL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT03",
-            "link": "https://m.media-amazon.com/images/I/516rSp82ULL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT03",
-            "link": "https://m.media-amazon.com/images/I/81VSHGUB5yL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT04",
-            "link": "https://m.media-amazon.com/images/I/51eUnEg+UOL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT04",
-            "link": "https://m.media-amazon.com/images/I/51eUnEg+UOL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT04",
-            "link": "https://m.media-amazon.com/images/I/81sTG3vdTSL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT05",
-            "link": "https://m.media-amazon.com/images/I/51oCs2KfAkL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT05",
-            "link": "https://m.media-amazon.com/images/I/51oCs2KfAkL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT05",
-            "link": "https://m.media-amazon.com/images/I/81gNtGeiHlL.jpg",
-            "height": 2000,
-            "width": 2000
-          },
-          {
-            "variant": "PT06",
-            "link": "https://m.media-amazon.com/images/I/51g6WxiGNRL.jpg",
-            "height": 500,
-            "width": 500
-          },
-          {
-            "variant": "PT06",
-            "link": "https://m.media-amazon.com/images/I/51g6WxiGNRL._SL75_.jpg",
-            "height": 75,
-            "width": 75
-          },
-          {
-            "variant": "PT06",
-            "link": "https://m.media-amazon.com/images/I/813gDxA4feL.jpg",
-            "height": 2000,
-            "width": 2000
-          }
-        ]
-      }
-    ],
-    "productTypes": [
-      { "marketplaceId": "ATVPDKIKX0DER", "productType": "CADDY" }
-    ],
-    "ranks": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "ranks": [
-          {
-            "title": "Baby",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 26300,
-            "rank": 26300
-          },
-          {
-            "title": "Nursery Décor",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 2811,
-            "rank": 2811
-          },
-          {
-            "title": "Diaper Stackers & Caddies",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 90,
-            "rank": 90
-          }
-        ]
-      }
-    ],
-    "salesRanks": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "ranks": [
-          {
-            "title": "Baby",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 26300,
-            "rank": 26300
-          },
-          {
-            "title": "Nursery Décor",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 2811,
-            "rank": 2811
-          },
-          {
-            "title": "Diaper Stackers & Caddies",
-            "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 90,
-            "rank": 90
-          }
-        ]
-      }
-    ],
-    "summaries": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "brandName": "Cartik",
-        "browseNode": "166769011",
-        "itemName": "Diaper Caddy Organizer (old Diaper Caddy Organizer)",
-        "manufacturer": "Cartik",
-        "modelNumber": "2246",
-        "sizeName": "2 Count (Pack of 1)",
-        "styleName": "old Diaper Caddy Organizer"
-      }
-    ],
-    "variations": [
-      {
-        "marketplaceId": "ATVPDKIKX0DER",
-        "asins": ["B09YFP28G8"],
-        "variationType": "CHILD"
-      }
-    ]
+    "productAsin": "B07F1X69HS",
+    "status": "Inactive",
+    "productSku": "JB-GIX4-MKM5",
+    "launchDate": "2020-05-14T23:23:33.000Z",
+    "costPerItem": "3"
   },
   {
     "asin": "B07FZQRZZF",
@@ -1761,14 +1795,14 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 22289,
-            "rank": 22289
+            "value": 22924,
+            "rank": 22924
           },
           {
             "title": "Car Seat Attachable Storage & Organizers",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/8457339011",
-            "value": 64,
-            "rank": 64
+            "value": 63,
+            "rank": 63
           }
         ]
       }
@@ -1780,14 +1814,14 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 22289,
-            "rank": 22289
+            "value": 22924,
+            "rank": 22924
           },
           {
             "title": "Car Seat Attachable Storage & Organizers",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/8457339011",
-            "value": 64,
-            "rank": 64
+            "value": 63,
+            "rank": 63
           }
         ]
       }
@@ -1807,7 +1841,12 @@
         "asins": ["B07GNRHN2Q", "B076ZJX4SX"],
         "variationType": "PARENT"
       }
-    ]
+    ],
+    "productAsin": "B07FZQRZZF",
+    "status": "Inactive",
+    "productSku": "O2-WSWS-RNP8",
+    "launchDate": "2018-07-29T09:44:04.000Z",
+    "costPerItem": "6"
   },
   {
     "asin": "B09YFP28G8",
@@ -1955,20 +1994,20 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 26300,
-            "rank": 26300
+            "value": 36534,
+            "rank": 36534
           },
           {
             "title": "Nursery Décor",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 2811,
-            "rank": 2811
+            "value": 3596,
+            "rank": 3596
           },
           {
             "title": "Diaper Stackers & Caddies",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 90,
-            "rank": 90
+            "value": 162,
+            "rank": 162
           }
         ]
       }
@@ -1980,20 +2019,20 @@
           {
             "title": "Baby",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products",
-            "value": 26300,
-            "rank": 26300
+            "value": 36534,
+            "rank": 36534
           },
           {
             "title": "Nursery Décor",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166875011",
-            "value": 2811,
-            "rank": 2811
+            "value": 3596,
+            "rank": 3596
           },
           {
             "title": "Diaper Stackers & Caddies",
             "link": "https://www.amazon.com/gp/bestsellers/baby-products/166769011",
-            "value": 90,
-            "rank": 90
+            "value": 162,
+            "rank": 162
           }
         ]
       }
@@ -2013,6 +2052,11 @@
         "asins": ["B09PGLKMK9", "B07F1X69HS"],
         "variationType": "PARENT"
       }
-    ]
+    ],
+    "productAsin": "B09YFP28G8",
+    "status": "Incomplete",
+    "productSku": "U1-4AA3-M779",
+    "launchDate": "2022-04-20T06:46:41.000Z",
+    "costPerItem": "3"
   }
 ]
