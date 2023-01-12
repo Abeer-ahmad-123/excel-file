@@ -51,240 +51,262 @@ app.get('/', (req, res) => {
 });
 
 function readfile(folder, arr, data) {
-  let products = [];
-  let productAsins = [];
+  et products = [];
+let productAsins = [];
 
-  for (let prod of data) {
-    if (!productAsins.includes(prod.asin)) {
-      products.push(prod);
-      productAsins.push(prod.asin);
-    }
+// cost per iten against seller sku
+let landedCostData = {};
+
+for (let prod of data) {
+  if (!productAsins.includes(prod.asin)) {
+    products.push(prod);
+    productAsins.push(prod.asin);
   }
+}
 
-  let allAsins = [];
-  let activeArray = [];
-  let inactiveArray = [];
-  let inCompleteaArray = [];
-  for (let a of arr) {
-    if (a.status === 'Inactive') inactiveArray.push(a.asin1);
-    if (a.status === 'Incomplete') inCompleteaArray.push(a.asin1);
-    if (a.status === 'Active') activeArray.push(a.asin1);
-  }
+let allAsins = [];
 
-  let actualInActiveArray = [];
-  for (let elem of inactiveArray) {
-    if (!activeArray.includes(elem)) actualInActiveArray.push(elem);
-  }
-  inactiveArray = [...actualInActiveArray];
+let parentsData = { list: [], keyValuePair: {} };
+let childrenData = { list: [], keyValuePair: {} };
+let anonymousData = { list: [], keyValuePair: {} };
 
-  let parentsData = { list: [], keyValuePair: {} };
-  let childrenData = { list: [], keyValuePair: {} };
-  let anonymousData = { list: [], keyValuePair: {} };
+let duplicateData = {
+  children: [],
+  parent: [],
+  anonymous: [],
+  all: [],
+  allAsins: [],
+};
+let inactiveData = {
+  children: [],
+  parent: [],
+  anonymous: [],
+  all: [],
+  allAsins: [],
+};
+let activeData = {
+  children: [],
+  parent: [],
+  anonymous: [],
+  all: [],
+  allAsins: [],
+};
+let inCompleteData = {
+  children: [],
+  parent: [],
+  anonymous: [],
+  all: [],
+  allAsins: [],
+};
 
-  let duplicateData = {
-    children: [],
-    parent: [],
-    anonymous: [],
-    allAsins: [],
-  };
-  let inactiveData = {
-    children: [],
-    parent: [],
-    anonymous: [],
-    allAsins: [],
-  };
-  let activeData = { children: [], parent: [], anonymous: [], allAsins: [] };
+let brandsWithAsins = {};
 
-  let brandsWithAsins = {};
-
-  let i = 0;
-  for (let prod of products) {
-    if (prod.variations?.length) {
-      let variation = prod.variations[0];
-      if (variation.variationType === 'PARENT') {
-        if (parentsData.keyValuePair[prod.asin]) {
-          duplicateData.parent.push(prod.asin);
-          duplicateData.allAsins.push(prod.asin);
-        } else {
-          if (inactiveArray.includes(prod.asin)) {
-            inactiveData.allAsins.push(prod.asin);
-            inactiveData.parent.push(prod.asin);
-          } else {
-            activeData.parent.push(prod.asin);
-            activeData.allAsins.push(prod.asin);
-          }
-        }
-        parentsData.list.push(prod.asin);
-        parentsData.keyValuePair[prod.asin] = prod;
-      } else {
-        if (childrenData.keyValuePair[prod.asin]) {
-          duplicateData.allAsins.push(prod.asin);
-          duplicateData.children.push(prod.asin);
-        } else {
-          if (inactiveArray.includes(prod.asin)) {
-            inactiveData.allAsins.push(prod.asin);
-            inactiveData.children.push(prod.asin);
-          } else {
-            activeData.allAsins.push(prod.asin);
-            activeData.children.push(prod.asin);
-          }
-        }
-        childrenData.keyValuePair[prod.asin] = prod;
-        childrenData.list.push(prod.asin);
-      }
-    } else {
-      if (anonymousData.keyValuePair[prod.asin]) {
+let i = 0;
+for (let prod of products) {
+  landedCostData[pro.se];
+  if (prod.variations?.length) {
+    let variation = prod.variations[0];
+    if (variation.variationType === "PARENT") {
+      if (parentsData.keyValuePair[prod.asin]) {
+        duplicateData.parent.push(prod.asin);
+        duplicateData.all.push(prod);
         duplicateData.allAsins.push(prod.asin);
-        duplicateData.anonymous.push(prod.asin);
+      }
+      if (prod.status === "Inactive") {
+        inactiveData.allAsins.push(prod.asin);
+        inactiveData.parent.push(prod.asin);
+        inactiveData.all.push(prod);
+      } else if (prod.status === "Incomplete") {
+        inCompleteData.allAsins.push(prod.asin);
+        inCompleteData.parent.push(prod.asin);
+        inCompleteData.all.push(prod);
       } else {
-        if (inactiveArray.includes(prod.asin)) {
-          inactiveData.allAsins.push(prod.asin);
-          inactiveData.anonymous.push(prod.asin);
-        } else {
-          activeData.allAsins.push(prod.asin);
-          activeData.anonymous.push(prod.asin);
-        }
+        activeData.parent.push(prod.asin);
+        activeData.allAsins.push(prod.asin);
+        activeData.all.push(prod);
       }
-      anonymousData.list.push(prod.asin);
-      anonymousData.keyValuePair[prod.asin] = prod;
-    }
-    allAsins.push(prod.asin);
-  }
-
-  for (let prod of products) {
-    if (
-      prod.summaries &&
-      prod.summaries?.length &&
-      prod.summaries[0].brandName
-    ) {
-      let brandName = prod.summaries[0].brandName;
-      if (!brandsWithAsins[brandName]) {
-        brandsWithAsins[brandName] = {
-          allAsins: [],
-          parents: [],
-          inactiveParents: [],
-
-          children: [],
-          inactiveChildren: [],
-
-          inactive: [],
-          active: [],
-
-          anonymous: [],
-          inactiveAnonymous: [],
-        };
-      }
-
-      let brandsData = brandsWithAsins[brandName];
-      if (parentsData.list.includes(prod.asin)) {
-        brandsData.parents.push(prod.asin);
-        if (inactiveData.parent.includes(prod.asin)) {
-          brandsData.inactiveParents.push(prod.asin);
-        }
-      }
-      if (childrenData.list.includes(prod.asin)) {
-        brandsData.children.push(prod.asin);
-        if (inactiveData.children.includes(prod.asin)) {
-          brandsData.inactiveChildren.push(prod.asin);
-        }
-      }
-      if (anonymousData.list.includes(prod.asin)) {
-        brandsData.anonymous.push(prod.asin);
-        if (inactiveData.anonymous.includes(prod.asin)) {
-          brandsData.inactiveAnonymous.push(prod.asin);
-        }
-      }
-      if (activeData.allAsins.includes(prod.asin)) {
-        brandsData.active.push(prod.asin);
-      }
-      if (inactiveData.allAsins.includes(prod.asin)) {
-        brandsData.inactive.push(prod.asin);
-      }
-      brandsData.allAsins.push(prod.asin);
+      parentsData.list.push(prod.asin);
+      parentsData.keyValuePair[prod.asin] = prod;
     } else {
-      i++;
-    }
-  }
-
-  let brandsDataStats = {};
-
-  const createIndividualObject = (data) => {
-    let obj = {};
-    for (let key of Object.keys(data)) {
-      obj[key] = data[key].length;
-    }
-    return obj;
-  };
-
-  for (var key of Object.keys(brandsWithAsins)) {
-    brandsDataStats[key] = createIndividualObject(brandsWithAsins[key]);
-  }
-
-  console.log('total elements', data.length);
-  console.log('total child products', childrenData.list.length);
-  console.log('total parent products', parentsData.list.length);
-  console.log('total anonymous products', anonymousData.list.length);
-
-  console.log('children duplicateData', duplicateData.children.length);
-  console.log('parent duplicateData', duplicateData.parent.length);
-  console.log('anonymous duplicateData', duplicateData.anonymous.length);
-
-  console.log('active parent length', activeData.parent.length);
-  console.log('inActive parent length', inactiveData.parent.length);
-
-  console.log('active children length', activeData.children.length);
-  console.log('inActive children length', inactiveData.children.length);
-
-  console.log('active anonymous length', activeData.anonymous.length);
-  console.log('inActive anonymous length', inactiveData.anonymous.length);
-
-  let active = [];
-  let inactive = [];
-  for (let d of arr) {
-    if (d.status.toLowerCase() !== 'active') inactive.push(d);
-    else active.push(d);
-  }
-
-  const formatActiveAndInActive = () => {
-    let formattedActive = [];
-    let formattedInActive = [];
-
-    let keys = [
-      'seller-sku',
-      'item-name',
-      'asin1',
-      'product-id',
-      'relation',
-      'avg_landed_costs',
-    ];
-    let parentProductList = parentsData.list;
-    const addRequiredColumns = (data) => {
-      let formattedData = {};
-      for (let index in keys) {
-        let key = keys[index];
-        formattedData[key] = data[key] || '';
+      if (childrenData.keyValuePair[prod.asin]) {
+        duplicateData.allAsins.push(prod.asin);
+        duplicateData.children.push(prod.asin);
+        duplicateData.all.push(prod);
       }
-      formattedData['relation'] = parentProductList.includes(data.asin1)
-        ? 'parent'
-        : anonymousData.list.includes(data.asin1)
-        ? 'missing'
-        : 'child';
-      return formattedData;
-    };
+      if (prod.status === "Inactive") {
+        inactiveData.allAsins.push(prod.asin);
+        inactiveData.children.push(prod.asin);
+        inactiveData.all.push(prod);
+      } else if (prod.status === "Incomplete") {
+        inCompleteData.allAsins.push(prod.asin);
+        inCompleteData.children.push(prod.asin);
+        inCompleteData.all.push(prod);
+      } else {
+        activeData.allAsins.push(prod.asin);
+        activeData.children.push(prod.asin);
+        activeData.all.push(prod);
+      }
+      childrenData.list.push(prod.asin);
+      childrenData.keyValuePair[prod.asin] = prod;
+    }
+  } else {
+    if (anonymousData.keyValuePair[prod.asin]) {
+      duplicateData.allAsins.push(prod.asin);
+      duplicateData.anonymous.push(prod.asin);
+      duplicateData.all.push(prod);
+    }
+    if (prod.status === "Inactive") {
+      inactiveData.allAsins.push(prod.asin);
+      inactiveData.anonymous.push(prod.asin);
+      inactiveData.all.push(prod);
+    } else if (prod.status === "Incomplete") {
+      inCompleteData.allAsins.push(prod.asin);
+      inCompleteData.anonymous.push(prod.asin);
+      inCompleteData.all.push(prod);
+    } else {
+      activeData.allAsins.push(prod.asin);
+      activeData.anonymous.push(prod.asin);
+      activeData.all.push(prod);
+    }
+    anonymousData.list.push(prod.asin);
+    anonymousData.keyValuePair[prod.asin] = prod;
+  }
+  allAsins.push(prod.asin);
+}
 
-    for (let p of inactive) {
-      formattedInActive.push(addRequiredColumns(p));
+for (let prod of products) {
+  if (prod.summaries && prod.summaries?.length && prod.summaries[0].brandName) {
+    let brandName = prod.summaries[0].brandName;
+    if (!brandsWithAsins[brandName]) {
+      brandsWithAsins[brandName] = {
+        allAsins: [],
+        parents: [],
+        inactiveParents: [],
+
+        children: [],
+        inactiveChildren: [],
+
+        inactive: [],
+        active: [],
+
+        anonymous: [],
+        inactiveAnonymous: [],
+      };
     }
-    for (let p of active) {
-      formattedActive.push(addRequiredColumns(p));
+
+    let brandsData = brandsWithAsins[brandName];
+    if (parentsData.list.includes(prod.asin)) {
+      brandsData.parents.push(prod.asin);
+      if (inactiveData.parent.includes(prod.asin)) {
+        brandsData.inactiveParents.push(prod.asin);
+      }
     }
-    return {
-      formattedActive,
-      formattedInActive,
-    };
+    if (childrenData.list.includes(prod.asin)) {
+      brandsData.children.push(prod.asin);
+      if (inactiveData.children.includes(prod.asin)) {
+        brandsData.inactiveChildren.push(prod.asin);
+      }
+    }
+    if (anonymousData.list.includes(prod.asin)) {
+      brandsData.anonymous.push(prod.asin);
+      if (inactiveData.anonymous.includes(prod.asin)) {
+        brandsData.inactiveAnonymous.push(prod.asin);
+      }
+    }
+    if (activeData.allAsins.includes(prod.asin)) {
+      brandsData.active.push(prod.asin);
+    }
+    if (inactiveData.allAsins.includes(prod.asin)) {
+      brandsData.inactive.push(prod.asin);
+    }
+    brandsData.allAsins.push(prod.asin);
+  } else {
+    i++;
+  }
+}
+
+let brandsDataStats = {};
+
+const createIndividualObject = (data) => {
+  let obj = {};
+  for (let key of Object.keys(data)) {
+    obj[key] = data[key].length;
+  }
+  return obj;
+};
+
+for (var key of Object.keys(brandsWithAsins)) {
+  brandsDataStats[key] = createIndividualObject(brandsWithAsins[key]);
+}
+
+// console.log("total elements", data.length);
+// console.log("total child products", childrenData.list.length);
+// console.log("total parent products", parentsData.list.length);
+// console.log("total anonymous products", anonymousData.list.length);
+
+// console.log("children duplicateData", duplicateData.children.length);
+// console.log("parent duplicateData", duplicateData.parent.length);
+// console.log("anonymous duplicateData", duplicateData.anonymous.length);
+
+// console.log("active parent length", activeData.parent.length);
+// console.log("inActive parent length", inactiveData.parent.length);
+
+// console.log("active children length", activeData.children.length);
+// console.log("inActive children length", inactiveData.children.length);
+
+// console.log("active anonymous length", activeData.anonymous.length);
+// console.log("inActive anonymous length", inactiveData.anonymous.length);
+
+// console.log("i value===>", i);
+
+// console.log("brandsWithAsins", brandsWithAsins);
+// console.log("brandsDataStats", brandsDataStats);
+
+const formatActiveAndInActive = () => {
+  let formattedActive = [];
+  let formattedInActive = [];
+  let formattedInComplete = [];
+
+  let keys = [
+    "seller-sku",
+    "item-name",
+    "asin1",
+    "product-id",
+    "relation",
+    "costPerItem",
+  ];
+
+  const addRequiredColumns = (data) => {
+    let formattedData = {};
+    for (let key in keys) {
+      formattedData[key] = data[key] || "";
+    }
+    formattedData["relation"] = parentProductList.includes(p.asin1)
+      ? "parent"
+      : anonymousData.list.includes(p.asin1)
+      ? "missing"
+      : "child";
+    return formattedData;
   };
 
-  const { formattedActive, formattedInActive } = formatActiveAndInActive();
+  for (let p of inactiveData.all) {
+    formattedInActive.push(addRequiredColumns(p));
+  }
+  for (let p of active.all) {
+    formattedActive.push(addRequiredColumns(p));
+  }
+  for (let p of inCompleteData.all) {
+    formattedInComplete.push(addRequiredColumns(p));
+  }
+  return {
+    formattedActive,
+    formattedInActive,
+    formattedInComplete,
+  };
+};
+
+const { formattedActive, formattedInActive, formattedInComplete } =
+  formatActiveAndInActive();
   console.log('formattedActive', formattedActive.length);
   console.log('formattedInActive', formattedInActive.length);
 
@@ -300,7 +322,7 @@ function readfile(folder, arr, data) {
     { header: 'Asin', key: 'asin1' },
     { header: 'Product Id', key: 'product-id' },
     { header: 'Relation', key: 'relation' },
-    { header: 'Avg Landed Costs', key: 'avg_landed_costs' },
+    { header: 'Avg Landed Costs', key: 'costPerItem' },
   ];
   worksheetInActive.columns = [
     { header: 'Sku', key: 'seller-sku' },
@@ -308,7 +330,7 @@ function readfile(folder, arr, data) {
     { header: 'Asin', key: 'asin1' },
     { header: 'Product Id', key: 'product-id' },
     { header: 'Relation', key: 'relation' },
-    { header: 'Avg Landed Costs', key: 'avg_landed_costs' },
+    { header: 'Avg Landed Costs', key: 'costPerItem' },
   ];
 
   // force the columns to be at least as long as their header row.
