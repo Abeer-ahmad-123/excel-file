@@ -1,19 +1,19 @@
-const express = require('express'); //Import the express dependency
+const express = require("express"); //Import the express dependency
 const app = express(); //Instantiate an express app, the main work horse of this server
-const port = 5000; //Save the port number where your server will be listening
-const fs = require('fs');
-const path = require('path');
-const Excel = require('exceljs');
+const port = 9000; //Save the port number where your server will be listening
+const fs = require("fs");
+const path = require("path");
+const Excel = require("exceljs");
 let arr = []; /*read json report file and parse it*/
 let data = []; /*read json products file and parse it*/
 let checkForValidFile;
-let mainPath = path.join(__dirname, 'data');
+let mainPath = path.join(__dirname, "data");
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   fs.readdir(mainPath, function (err, folders) {
     //handling error
     if (err) {
-      return console.log('Unable to scan directory: ' + err);
+      return console.log("Unable to scan directory: " + err);
     }
 
     const mainFolders = folders.filter((res) =>
@@ -23,20 +23,20 @@ app.get('/', (req, res) => {
     mainFolders.forEach(function (folder) {
       fs.readdir(path.join(mainPath, folder), function (err, files) {
         //listing all files using forEach
-        console.log('folder', folder);
+        console.log("folder", folder);
 
         files.forEach(function (file) {
-          const extension = file.split('.').pop();
-          checkForValidFile = extension === 'json' ? true : false;
+          const extension = file.split(".").pop();
+          checkForValidFile = extension === "json" ? true : false;
           if (checkForValidFile) {
-            if (file === 'products.json') {
+            if (file === "products.json") {
               data = JSON.parse(
-                fs.readFileSync(path.join(mainPath, folder, file), 'utf8', 'r')
+                fs.readFileSync(path.join(mainPath, folder, file), "utf8", "r")
               );
             }
-            if (file === 'reports.json') {
+            if (file === "reports.json") {
               arr = JSON.parse(
-                fs.readFileSync(path.join(mainPath, folder, file), 'utf8', 'r')
+                fs.readFileSync(path.join(mainPath, folder, file), "utf8", "r")
               );
             }
           }
@@ -48,22 +48,22 @@ app.get('/', (req, res) => {
     });
   });
 
-  res.status(200).send('Excel File Created');
+  res.status(200).send("Excel File Created");
 });
 
 function readfile(folder, arr, data) {
-  let products = [];
-  let productAsins = [];
+  let products = [...data];
+  // let productAsins = [];
 
   // cost per iten against seller sku
   let landedCostData = {};
 
-  for (let prod of data) {
-    if (!productAsins.includes(prod.asin)) {
-      products.push(prod);
-      productAsins.push(prod.asin);
-    }
-  }
+  // for (let prod of data) {
+  //   if (!productAsins.includes(prod.asin)) {
+  //     products.push(prod);
+  //     productAsins.push(prod.asin);
+  //   }
+  // }
 
   let allAsins = [];
 
@@ -104,20 +104,20 @@ function readfile(folder, arr, data) {
 
   let i = 0;
   for (let prod of products) {
-    landedCostData[prod.productSku] = prod.costPerItem;
+    landedCostData[prod.sellerSku] = prod.costPerItem;
     if (prod.variations?.length) {
       let variation = prod.variations[0];
-      if (variation.variationType === 'PARENT') {
+      if (variation.variationType === "PARENT") {
         if (parentsData.keyValuePair[prod.asin]) {
           duplicateData.parent.push(prod.asin);
           duplicateData.all.push(prod);
           duplicateData.allAsins.push(prod.asin);
         }
-        if (prod.status === 'Inactive') {
+        if (prod.status === "Inactive") {
           inactiveData.allAsins.push(prod.asin);
           inactiveData.parent.push(prod.asin);
           inactiveData.all.push(prod);
-        } else if (prod.status === 'Incomplete') {
+        } else if (prod.status === "Incomplete") {
           inCompleteData.allAsins.push(prod.asin);
           inCompleteData.parent.push(prod.asin);
           inCompleteData.all.push(prod);
@@ -134,11 +134,11 @@ function readfile(folder, arr, data) {
           duplicateData.children.push(prod.asin);
           duplicateData.all.push(prod);
         }
-        if (prod.status === 'Inactive') {
+        if (prod.status === "Inactive") {
           inactiveData.allAsins.push(prod.asin);
           inactiveData.children.push(prod.asin);
           inactiveData.all.push(prod);
-        } else if (prod.status === 'Incomplete') {
+        } else if (prod.status === "Incomplete") {
           inCompleteData.allAsins.push(prod.asin);
           inCompleteData.children.push(prod.asin);
           inCompleteData.all.push(prod);
@@ -156,11 +156,11 @@ function readfile(folder, arr, data) {
         duplicateData.anonymous.push(prod.asin);
         duplicateData.all.push(prod);
       }
-      if (prod.status === 'Inactive') {
+      if (prod.status === "Inactive") {
         inactiveData.allAsins.push(prod.asin);
         inactiveData.anonymous.push(prod.asin);
         inactiveData.all.push(prod);
-      } else if (prod.status === 'Incomplete') {
+      } else if (prod.status === "Incomplete") {
         inCompleteData.allAsins.push(prod.asin);
         inCompleteData.anonymous.push(prod.asin);
         inCompleteData.all.push(prod);
@@ -257,9 +257,9 @@ function readfile(folder, arr, data) {
   // console.log('inActive parent length', inactiveData.parent.length);
 
   // console.log('active children length', activeData.children.length);
-  console.log('inActive all length', inactiveData.all.length);
-  console.log('active all length', activeData.all.length);
-  console.log('in complete all length', inCompleteData.all.length);
+  console.log("inActive all length", inactiveData.all.length);
+  console.log("active all length", activeData.all.length);
+  console.log("in complete all length", inCompleteData.all.length);
   // console.log('inActive anonymous length', inactiveData.anonymous.length);
 
   // console.log('brandsWithAsins', brandsWithAsins);
@@ -271,24 +271,25 @@ function readfile(folder, arr, data) {
     let formattedInComplete = [];
 
     let keys = [
-      'productSku',
-      'itemName',
-      'asin1',
-      'productId',
-      'relation',
-      'costPerItem',
+      "sellerSku",
+      "itemName",
+      "asin1",
+      "productId",
+      "relation",
+      "costPerItem",
     ];
 
-    const addRequiredColumns = (data) => {
+    const addRequiredColumns = (pData) => {
       let formattedData = {};
-      for (let key in keys) {
-        formattedData[key] = data[key] || '';
+      for (let index in keys) {
+        let key = keys[index];
+        formattedData[key] = pData[key] || "";
       }
-      formattedData['relation'] = parentProductList.includes(data.asin1)
-        ? 'parent'
-        : anonymousData.list.includes(data.asin1)
-        ? 'missing'
-        : 'child';
+      formattedData["relation"] = parentProductList.includes(pData.asin1)
+        ? "parent"
+        : anonymousData.list.includes(pData.asin1)
+        ? "missing"
+        : "child";
       return formattedData;
     };
 
@@ -310,71 +311,78 @@ function readfile(folder, arr, data) {
 
   const { formattedActive, formattedInActive, formattedInComplete } =
     formatActiveAndInActive();
-  // console.log('formattedActive', formattedActive);
-  // console.log('formattedInActive', formattedInActive);
+
+  console.log("formattedActive", formattedActive.length);
+  console.log(
+    "formattedInActive",
+    formattedInActive.length,
+    "inactiveData.all",
+    inactiveData.all?.length
+  );
+  console.log("formattedInComplete", formattedInComplete.length);
 
   // need to create a workbook object. Almost everything in ExcelJS is based off of the workbook object.
   let workbook = new Excel.Workbook();
 
-  let worksheetActive = workbook.addWorksheet('Active');
-  let worksheetInActive = workbook.addWorksheet('InActive');
-  let worksheetInComplete = workbook.addWorksheet('InComplete');
+  let worksheetActive = workbook.addWorksheet("Active");
+  let worksheetInActive = workbook.addWorksheet("InActive");
+  let worksheetInComplete = workbook.addWorksheet("InComplete");
 
   worksheetActive.columns = [
-    { header: 'Sku', key: 'sellerSku' },
-    { header: 'Item Name', key: 'itemName' },
-    { header: 'Asin', key: 'asin1' },
-    { header: 'Product Id', key: 'productId' },
-    { header: 'Relation', key: 'relation' },
-    { header: 'Avg Landed Costs', key: 'costPerItem' },
+    { header: "Sku", key: "sellerSku" },
+    { header: "Item Name", key: "itemName" },
+    { header: "Asin", key: "asin1" },
+    { header: "Product Id", key: "productId" },
+    { header: "Relation", key: "relation" },
+    { header: "Avg Landed Costs", key: "costPerItem" },
   ];
   worksheetInActive.columns = [
-    { header: 'Sku', key: 'sellerSku' },
-    { header: 'Item Name', key: 'itemName' },
-    { header: 'Asin', key: 'asin1' },
-    { header: 'Product Id', key: 'productId' },
-    { header: 'Relation', key: 'relation' },
-    { header: 'Avg Landed Costs', key: 'costPerItem' },
+    { header: "Sku", key: "sellerSku" },
+    { header: "Item Name", key: "itemName" },
+    { header: "Asin", key: "asin1" },
+    { header: "Product Id", key: "productId" },
+    { header: "Relation", key: "relation" },
+    { header: "Avg Landed Costs", key: "costPerItem" },
   ];
   worksheetInComplete.columns = [
-    { header: 'Sku', key: 'sellerSku' },
-    { header: 'Item Name', key: 'itemName' },
-    { header: 'Asin', key: 'asin1' },
-    { header: 'Product Id', key: 'productId' },
-    { header: 'Relation', key: 'relation' },
-    { header: 'Avg Landed Costs', key: 'costPerItem' },
+    { header: "Sku", key: "sellerSku" },
+    { header: "Item Name", key: "itemName" },
+    { header: "Asin", key: "asin1" },
+    { header: "Product Id", key: "productId" },
+    { header: "Relation", key: "relation" },
+    { header: "Avg Landed Costs", key: "costPerItem" },
   ];
 
   // force the columns to be at least as long as their header row.
   // Have to take this approach because ExcelJS doesn't have an autofit property.
   worksheetActive.columns.forEach((column) => {
-    if (column.header === 'Item Name') {
+    if (column.header === "Item Name") {
       column.width = column.header.length < 12 ? 160 : column.header.length;
-    } else if (column.header === 'Sku') {
+    } else if (column.header === "Sku") {
       column.width = column.header.length < 12 ? 33 : column.header.length;
-    } else if (column.header === 'Open Date') {
+    } else if (column.header === "Open Date") {
       column.width = column.header.length < 12 ? 21 : column.header.length;
     } else {
       column.width = column.header.length < 12 ? 12 : column.header.length;
     }
   });
   worksheetInActive.columns.forEach((column) => {
-    if (column.header === 'Item Name') {
+    if (column.header === "Item Name") {
       column.width = column.header.length < 12 ? 150 : column.header.length;
-    } else if (column.header === 'Sku') {
+    } else if (column.header === "Sku") {
       column.width = column.header.length < 12 ? 30 : column.header.length;
-    } else if (column.header === 'Open Date') {
+    } else if (column.header === "Open Date") {
       column.width = column.header.length < 12 ? 21 : column.header.length;
     } else {
       column.width = column.header.length < 12 ? 12 : column.header.length;
     }
   });
   worksheetInComplete.columns.forEach((column) => {
-    if (column.header === 'Item Name') {
+    if (column.header === "Item Name") {
       column.width = column.header.length < 12 ? 150 : column.header.length;
-    } else if (column.header === 'Sku') {
+    } else if (column.header === "Sku") {
       column.width = column.header.length < 12 ? 30 : column.header.length;
-    } else if (column.header === 'Open Date') {
+    } else if (column.header === "Open Date") {
       column.width = column.header.length < 12 ? 21 : column.header.length;
     } else {
       column.width = column.header.length < 12 ? 12 : column.header.length;
@@ -407,41 +415,41 @@ function readfile(folder, arr, data) {
   // Set the way columns C - F are formatted
   const figureColumns = [3, 4, 5, 6];
   figureColumns.forEach((i) => {
-    worksheetActive.getColumn(i).numFmt = '$0.00';
-    worksheetActive.getColumn(i).alignment = { horizontal: 'center' };
+    worksheetActive.getColumn(i).numFmt = "$0.00";
+    worksheetActive.getColumn(i).alignment = { horizontal: "center" };
   });
   const figureColumnsInActive = [3, 4, 5, 6];
   figureColumnsInActive.forEach((i) => {
-    worksheetInActive.getColumn(i).numFmt = '$0.00';
-    worksheetInActive.getColumn(i).alignment = { horizontal: 'center' };
+    worksheetInActive.getColumn(i).numFmt = "$0.00";
+    worksheetInActive.getColumn(i).alignment = { horizontal: "center" };
   });
 
   const figureColumnsInComplete = [3, 4, 5, 6];
   figureColumnsInComplete.forEach((i) => {
-    worksheetInComplete.getColumn(i).numFmt = '$0.00';
-    worksheetInComplete.getColumn(i).alignment = { horizontal: 'center' };
+    worksheetInComplete.getColumn(i).numFmt = "$0.00";
+    worksheetInComplete.getColumn(i).alignment = { horizontal: "center" };
   });
 
   // loop through all of the rows and set the outline style.
   worksheetActive.eachRow({ includeEmpty: false }, function (row, rowNumber) {
     worksheetActive.getCell(`A${rowNumber}`).border = {
-      top: { style: 'thin' },
-      left: { style: 'thin' },
-      bottom: { style: 'thin' },
-      right: { style: 'none' },
+      top: { style: "thin" },
+      left: { style: "thin" },
+      bottom: { style: "thin" },
+      right: { style: "none" },
     };
 
-    const insideColumns = ['B', 'C', 'D'];
+    const insideColumns = ["B", "C", "D"];
 
     insideColumns.forEach((v) => {
       worksheetActive.getCell(`${v}${rowNumber}`).border = {
-        top: { style: 'thin' },
-        bottom: { style: 'thin' },
-        left: { style: 'none' },
-        right: { style: 'none' },
+        top: { style: "thin" },
+        bottom: { style: "thin" },
+        left: { style: "none" },
+        right: { style: "none" },
       };
     });
-    const widthColumns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const widthColumns = ["A", "B", "C", "D", "E", "F", "G", "H"];
     widthColumns.forEach((v) => {
       worksheetActive.getCell(`${v}${rowNumber}`).style = { width: 120 };
     });
@@ -449,23 +457,23 @@ function readfile(folder, arr, data) {
 
   worksheetInActive.eachRow({ includeEmpty: false }, function (row, rowNumber) {
     worksheetInActive.getCell(`A${rowNumber}`).border = {
-      top: { style: 'thin' },
-      left: { style: 'thin' },
-      bottom: { style: 'thin' },
-      right: { style: 'none' },
+      top: { style: "thin" },
+      left: { style: "thin" },
+      bottom: { style: "thin" },
+      right: { style: "none" },
     };
 
-    const insideColumns = ['B', 'C', 'D'];
+    const insideColumns = ["B", "C", "D"];
 
     insideColumns.forEach((v) => {
       worksheetInActive.getCell(`${v}${rowNumber}`).border = {
-        top: { style: 'thin' },
-        bottom: { style: 'thin' },
-        left: { style: 'none' },
-        right: { style: 'none' },
+        top: { style: "thin" },
+        bottom: { style: "thin" },
+        left: { style: "none" },
+        right: { style: "none" },
       };
     });
-    const widthColumnsInActive = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const widthColumnsInActive = ["A", "B", "C", "D", "E", "F", "G", "H"];
     widthColumnsInActive.forEach((v) => {
       worksheetInActive.getCell(`${v}${rowNumber}`).style = { width: 120 };
     });
@@ -475,23 +483,23 @@ function readfile(folder, arr, data) {
     { includeEmpty: false },
     function (row, rowNumber) {
       worksheetInComplete.getCell(`A${rowNumber}`).border = {
-        top: { style: 'thin' },
-        left: { style: 'thin' },
-        bottom: { style: 'thin' },
-        right: { style: 'none' },
+        top: { style: "thin" },
+        left: { style: "thin" },
+        bottom: { style: "thin" },
+        right: { style: "none" },
       };
 
-      const insideColumns = ['B', 'C', 'D'];
+      const insideColumns = ["B", "C", "D"];
 
       insideColumns.forEach((v) => {
         worksheetInComplete.getCell(`${v}${rowNumber}`).border = {
-          top: { style: 'thin' },
-          bottom: { style: 'thin' },
-          left: { style: 'none' },
-          right: { style: 'none' },
+          top: { style: "thin" },
+          bottom: { style: "thin" },
+          left: { style: "none" },
+          right: { style: "none" },
         };
       });
-      const widthColumnsInComplete = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+      const widthColumnsInComplete = ["A", "B", "C", "D", "E", "F", "G", "H"];
       widthColumnsInComplete.forEach((v) => {
         worksheetInComplete.getCell(`${v}${rowNumber}`).style = { width: 120 };
       });
@@ -500,13 +508,13 @@ function readfile(folder, arr, data) {
 
   // Create a freeze pane, which means we'll always see the header as we scroll around.
   worksheetActive.views = [
-    { state: 'frozen', xSplit: 1, ySplit: 1, activeCell: 'B2' },
+    { state: "frozen", xSplit: 1, ySplit: 1, activeCell: "B2" },
   ];
   worksheetInActive.views = [
-    { state: 'frozen', xSplit: 1, ySplit: 1, activeCell: 'B2' },
+    { state: "frozen", xSplit: 1, ySplit: 1, activeCell: "B2" },
   ];
   worksheetInComplete.views = [
-    { state: 'frozen', xSplit: 1, ySplit: 1, activeCell: 'B2' },
+    { state: "frozen", xSplit: 1, ySplit: 1, activeCell: "B2" },
   ];
 
   // Keep in mind that reading and writing is promise based.
